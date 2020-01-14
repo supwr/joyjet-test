@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <title>Joyjet Test</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Tests</h1>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Level 1</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>README</h4>
+                        <pre><code class="markdown">{{ test1_readme }}</code></pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Data</h4>
+                        <pre><code class="json">{{ test1_data }}</code></pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4><table width="100%"><tr><td>Output</td><td><a href="javascript:void(0)" style="float: right" class="btn btn-primary generate-test1-output">Generate output</a></td></tr></table></h4>
+                        <pre><code class="json">{{ test1_output }}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">Level 2</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>README</h4>
+                        <pre><code class="markdown">{{ test2_readme }}</code></pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Data</h4>
+                        <pre><code class="json">{{ test2_data }}</code></pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4><table width="100%"><tr><td>Output</td><td><a href="javascript:void(0)" style="float: right" class="btn btn-primary generate-test2-output">Generate output</a></td></tr></table></h4>
+                        <pre><code class="json">{{ test2_output }}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">Level 3</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>README</h4>
+                        <pre><code class="markdown">{{ test3_readme }}</code></pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Data</h4>
+                        <pre><code class="json">{{ test3_data }}</code></pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4><table width="100%"><tr><td>Output</td><td><a href="javascript:void(0)" style="float: right" class="btn btn-primary generate-test3-output">Generate output</a></td></tr></table></h4>
+                        <pre><code class="json">{{ test3_output }}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/solarized-dark.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/languages/json.min.js"></script>
+    <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/languages/markdown.min.js"></script>
+
+    <script>
+        var generateTest1Output = function() {
+            $.ajax({
+                type: 'GET',
+                url: '/generate_test1',
+                success: function() {
+                    alert('Output for Level 1 created successfuly');
+                    location.reload();
+                },
+                error: function() {
+                    alert('An error has occurred')
+                }
+            });
+        };
+
+        var generateTest2Output = function() {
+            $.ajax({
+                type: 'GET',
+                url: '/generate_test2',
+                success: function() {
+                    alert('Output for Level 2 created successfuly');
+                    location.reload();
+                },
+                error: function() {
+                    alert('An error has occurred')
+                }
+            });
+        };
+
+        var generateTest3Output = function() {
+            $.ajax({
+                type: 'GET',
+                url: '/generate_test3',
+                success: function() {
+                    alert('Output for Level 3 created successfuly');
+                    location.reload();
+                },
+                error: function() {
+                    alert('An error has occurred')
+                }
+            });
+        };
+
+        $(document).ready(function() {
+            $('.generate-test1-output').click(function() {
+                generateTest1Output();
+            });
+
+            $('.generate-test2-output').click(function() {
+                generateTest2Output();
+            });
+
+            $('.generate-test3-output').click(function() {
+                generateTest3Output();
+            });
+        });
+    </script>
+
+</body>
+</html>
